@@ -18,6 +18,11 @@ body {
 	top: 20%;
 }
 
+.gradebutton {
+	width:100%;
+	background-color: green;
+}
+
 #header {
 	display: inline;
 	position: relative;
