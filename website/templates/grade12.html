@@ -1,0 +1,48 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		
+		<title> PHS teacher rater </title>
+		<!link rel = "stylesheet" type = "text/css" href = "index.css"> 
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+		<style>
+		.card {
+		  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		  transition: 0.3s;
+		  width: 40%;
+		}
+		
+		.card:hover {
+		  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		
+		.container {
+		  padding: 2px 16px;
+		}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class = "header">
+			<a href = "index.html"> <img src="{{url_for('static', filename='tiger.png')}}" id = "tiger"></a>
+			<h1 id = "header"> PHS Teacher Rater </h1>
+		</div>
+		
+		<h1> 12th Grade </h1>
+
+		{% for teacher in teachers %}
+		
+		<div class="card">
+		  <img src={{ teacher.image_file }} alt="Avatar" style="width:100%">
+		  <div class="container">
+		    <h4><b>{{ teacher.name }}</b></h4> 
+		  </div>
+		</div>
+		
+		{% endfor %}
+
+	</body>
+
+</html>
+</DOCTYPE!>
