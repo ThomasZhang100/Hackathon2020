@@ -1,3 +1,3 @@
-from models import Teacher, Review
-from __init__ import db
+from website.models import Teacher, Review
+from website.__init__ import db
 db.create_all()

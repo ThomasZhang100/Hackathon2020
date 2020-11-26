@@ -1,11 +1,12 @@
 from datetime import datetime
-from __init__ import db
+from website.__init__ import db
 
 
 class Teacher(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(100), unique=True, nullable=False)
 	image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+	grade = db.Column(db.Integer, nullable=False)
 	reviews = db.relationship('Review', backref='teacher', lazy=True)
 
 	def __repr__(self):
